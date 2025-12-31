@@ -6,7 +6,7 @@ export const loginUser = createAsyncThunk(
   async (loginData, { rejectWithValue }) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/users/login",
+        `${import.meta.env.VITE_API_URL}/users/login`,
         {
           email: loginData.email,
           password: loginData.password,
@@ -30,7 +30,7 @@ export const signupUser = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/users/signup",
+        `${import.meta.env.VITE_API_URL}/users/signup`,
         userData
       );
 
